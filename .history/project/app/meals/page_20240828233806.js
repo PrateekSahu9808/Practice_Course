@@ -5,7 +5,7 @@ import MealsGrid from "../components/meals/meals-grid";
 import { getMeals } from "@/lib/meals";
 
 
-async function Meals(){
+function Meals(){
    const meals = await getMeals();
   return <MealsGrid meals={meals} />
 }
@@ -24,10 +24,8 @@ const MealsPage = async () => {
         </p>
       </header>
       <main className={classes.main}>
-        <Suspense fallback={<p className={classes.loading}>Fetching Meals .....</p>}>
-          <Meals/>
-        </Suspense>
-        
+        <Suspense></Suspense>
+        <Meals/>
       </main>
     </>
   );
